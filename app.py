@@ -7,8 +7,8 @@ app = Flask(__name__)
 
 
 @app.route('/', methods=['GET'])
-def get_quote():
-	r = requests.get('https://api.sheety.co/807cbee0-6212-45be-8e51-868d9f81ae53')
+def get_stop():
+	r = requests.get('https://mcb-api.herokuapp.com/get_all_bus_stops')
 	quotes = r.json()
 	return random.choice(quotes)['quotes']
 
